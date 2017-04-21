@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>webfood</display-name>
+  
+  <listener>
+  	<listener-class>com.zd.listeners.CleanRedisOnlineUserListener</listener-class>
+  </listener>
+   <listener>
+  	<listener-class>com.zd.listeners.InitListener</listener-class>
+  </listener>
+  
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>com.zd.filtier.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+  	<servlet-name>indexServlet</servlet-name>
+  	<servlet-class>com.zd.servlets.IndexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>indexServlet</servlet-name>
+  	<url-pattern>/index.action</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>historyServlet</servlet-name>
+  	<servlet-class>com.zd.servlets.HistoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>historyServlet</servlet-name>
+  	<url-pattern>/history.action</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>collectServlet</servlet-name>
+  	<servlet-class>com.zd.servlets.CollectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>collectServlet</servlet-name>
+  	<url-pattern>/collect.action</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>verifyCodeServlet</servlet-name>
+  	<servlet-class>com.zd.servlets.VerifyCodeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>verifyCodeServlet</servlet-name>
+  	<url-pattern>/verifyCode.action</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>resadminServlet</servlet-name>
+  	<servlet-class>com.zd.servlets.ResadminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>resadminServlet</servlet-name>
+  	<url-pattern>/resadmin.action</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>resfoodServlet</servlet-name>
+  	<servlet-class>com.zd.servlets.ResfoodServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>resfoodServlet</servlet-name>
+  	<url-pattern>/resfood.action</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>resorderServlet</servlet-name>
+  	<servlet-class>com.zd.servlets.ResorderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>resorderServlet</servlet-name>
+  	<url-pattern>/resorder.action</url-pattern>
+  </servlet-mapping>
+   <servlet>
+  	<servlet-name>resuserServlet</servlet-name>
+  	<servlet-class>com.zd.servlets.ResuserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>resuserServlet</servlet-name>
+  	<url-pattern>/resuser.action</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/500.jsp</location>
+  </error-page>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
